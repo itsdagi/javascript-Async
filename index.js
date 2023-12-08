@@ -1,33 +1,38 @@
 console.log("Start")
 
- function loginUser(email, password, callBack){
+ function loginUser(email, password){
+   return new Promise((resolve, reject)=>{
+     
+   
   setTimeout(()=>{
-    callBack({userID:564, status: "success"})
+    const userData = {userID:564, status: "success"}
     console.log("User logged in" + email)
+    resolve(userData);
   },2000);  
-}
+  })
+ }
 
-function getUserTweets(userID, callBack){
+function getUserTweets(userID){
+  return new Promise((resolve, reject)=>{
   setTimeout(()=>{
     tweetData = [{tweetID:1, content:"ABC"}, {tweetID:2, content:"XYZ"}]
-    callBack(tweetData);
+    resolve(tweetData);
     console.log("tweet data")
     },1000)
+  })
 }
-function getTweetComments(tweetID, callBack){
+function getTweetComments(tweetID){
+  return new Promise((resolve, reject)=>{
   setTimeout(()=>{
     commentData=[{commentID:1, content:"COOL!"}]
-   callBack(commentData);
+   resolve(commentData);
     console.log("inside comments")
   },1000)
+})
 }
-const data = loginUser("xcvkp@example.com","dagim",(userData) =>{
-  getUserTweets(userData.userID, ()=>{
-    getTweetComments(tweetData[0].tweetID,()=>{
-      console.log("callback")
-    })
-  });
-});
-
+loginUser("dagim@gmail.com","123456")
+  .then(userData => getUserTweets(userData.userID))
+  .then(tweetData => getTweetComments(tweetData.tweetID))  
+  .then(commentData => console.log(commentData))
 
 console.log("Finish");
