@@ -18,6 +18,7 @@ function getTweetComments(tweetID, callBack){
   setTimeout(()=>{
     commentData=[{commentID:1, content:"COOL!"}]
    callBack(commentData);
+    console.log("inside comments")
   },1000)
 }
 const data = loginUser("xcvkp@example.com","dagim",(userData) =>{
