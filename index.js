@@ -1,14 +1,15 @@
 console.log("Start")
-function loginUser(email, password){
+
+ function loginUser(email, password, callback){
   setTimeout(()=>{
-    userData = {userID:564, status: "success"}
-    return userData;
+    callBack = {userID:564, status: "success"}
+    
   },2000);  
 }
 
 function getUserTweets(){}
 function getTweetComments(){}
+const data = loginUser("xcvkp@example.com", "password",(values) => console.log(values));
 
-const data = loginUser("dagimalemux@gmail.com", "random");
 console.log(data)
-console.log("Finish")
+console.log("Finish");
