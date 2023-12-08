@@ -1,6 +1,14 @@
+console.log("Start")
+function loginUser(email, password){
+  setTimeout(()=>{
+    userData = {userID:564, status: "success"}
+    return userData;
+  },2000);  
+}
 
+function getUserTweets(){}
+function getTweetComments(){}
 
-
-setTimeout(()=>{
-  console.log("Hello")
-},2000)
+const data = loginUser("dagimalemux@gmail.com", "random");
+console.log(data)
+console.log("Finish")
