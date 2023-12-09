@@ -7,7 +7,7 @@ console.log("Start")
   setTimeout(()=>{
     const userData = {userID:564, status: "success"}
     console.log("User logged in" + email)
-    reject("Your have an error!!");
+    resolve(userData);
   },2000);  
   })
  }
