@@ -30,6 +30,7 @@ function getTweetComments(tweetID){
   },1000)
 })
 }
+
 // loginUser("dagim@gmail.com","123456")
 //   .then(userData => getUserTweets(userData.userID))
 //   .then(tweetData => getTweetComments(tweetData.tweetID))  
@@ -37,7 +38,11 @@ function getTweetComments(tweetID){
 //   .catch(error=>console.log(error)) //called when using reject
 
 
-aysnc function displayData(){
+async function displayData(){
   const userData = await loginUser("dagimalemu@gmail.com","2323223")
+  const tweetData = await getUserTweets(userData.userID);
+  const commentData = await getTweetComments(tweetData[0].tweetID)
+  console.log(commentData)
 }
 console.log("Finish");
+displayData();
