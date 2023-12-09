@@ -7,7 +7,7 @@ console.log("Start")
   setTimeout(()=>{
     const userData = {userID:564, status: "success"}
     console.log("User logged in" + email)
-    resolve(userData);
+    reject("Your have an error!!");
   },2000);  
   })
  }
@@ -39,10 +39,16 @@ function getTweetComments(tweetID){
 
 
 async function displayData(){
+
+  try{
+  
   const userData = await loginUser("dagimalemu@gmail.com","2323223")
   const tweetData = await getUserTweets(userData.userID);
   const commentData = await getTweetComments(tweetData[0].tweetID)
-  console.log(commentData)
+  console.log(commentData)}
+  catch(error){
+    console.log(error)
+  }
 }
 console.log("Finish");
 displayData();
