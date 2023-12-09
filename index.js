@@ -30,10 +30,14 @@ function getTweetComments(tweetID){
   },1000)
 })
 }
-loginUser("dagim@gmail.com","123456")
-  .then(userData => getUserTweets(userData.userID))
-  .then(tweetData => getTweetComments(tweetData.tweetID))  
-  .then(commentData => console.log(commentData))
-  .catch(error=>console.log(error)) //called when using reject
+// loginUser("dagim@gmail.com","123456")
+//   .then(userData => getUserTweets(userData.userID))
+//   .then(tweetData => getTweetComments(tweetData.tweetID))  
+//   .then(commentData => console.log(commentData))
+//   .catch(error=>console.log(error)) //called when using reject
 
+
+aysnc function displayData(){
+  const userData = await loginUser("dagimalemu@gmail.com","2323223")
+}
 console.log("Finish");
