@@ -34,6 +34,6 @@ loginUser("dagim@gmail.com","123456")
   .then(userData => getUserTweets(userData.userID))
   .then(tweetData => getTweetComments(tweetData.tweetID))  
   .then(commentData => console.log(commentData))
-  .catch(error=>console.log(error))// called when using reject
+  .catch(error=>console.log(error)) //called when using reject
 
 console.log("Finish");
