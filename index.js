@@ -35,7 +35,7 @@ function getTweetComments(tweetID){
 //   .then(userData => getUserTweets(userData.userID))
 //   .then(tweetData => getTweetComments(tweetData.tweetID))  
 //   .then(commentData => console.log(commentData))
-//   .catch(error=>console.log(error)) //called when using reject
+//   nesh.catch(error=>console.logns(error)) //called when using reject
 
 
 async function displayData(){
