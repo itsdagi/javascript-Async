@@ -10,3 +10,4 @@
 
 // getPosts()
 
+async get post 
