@@ -34,7 +34,7 @@ function getTweetComments(tweetID){
 // loginUser("dagim@gmail.com","123456")
 //   .then(userData => getUserTweets(userData.userID))
 //   .then(tweetData => getTweetComments(tweetData.tweetID))  
-//   .then(commentData => console.log(commentData))
+//   .then(commentData => console.log(commentData))j
 //   nesh.catch(error=>console.logns(error)) //called when using reject
 
 
