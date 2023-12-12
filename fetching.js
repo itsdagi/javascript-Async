@@ -7,7 +7,6 @@
 //   })
 //   .catch(error => console.log(error))
 // }
-
 // getPosts()
 
 async function getPosts(){
