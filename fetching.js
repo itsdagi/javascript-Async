@@ -23,5 +23,7 @@ function addNewPost(endPoint){
       'Content-type': 'application/json; charset = UTF8'
     }
   })
+  .then(response => response.json())
+  .then(data => console.log(data))
 }
 addNewPost("/posts/")
