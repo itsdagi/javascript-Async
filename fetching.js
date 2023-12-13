@@ -27,3 +27,20 @@ function addNewPost(endPoint){
   .then(data => console.log(data))
 }
 addNewPost("/posts/")
+
+function updatePost(endPoint){
+  fetch(baseURL + endPoint,{
+    method:"PUT",
+      body:JSON.stringify({
+      id: 1,
+      title:"updated new title",
+        userId:1
+      }),
+      header: {
+      'Content-type': 'application/json; charset = UTF8'
+      }
+  })
+  .then(response => response.json())
+  .then(data=>console.log(data))
+}
+updatePost("/posts/3")
