@@ -1,7 +1,27 @@
-async function getPosts(){
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts/')
-  const posts = await response.json()
-  posts.forEach(post => console.log(post.body))
+const baseURL = 'https://jsonplaceholder.typicode.com'
+
+ function getAllPosts(endPoint){
+   fetch(baseURL + endPoint)
+   .then(response => response.json())
+   .then(data => console.log(data))
+   .catch(error=> console.log(error))
 }
 
-getPosts();
+getAllPosts("/posts/");
+
+function addNewPost(endPoint){
+  fetch(baseURL + endPoint, {
+    method: "POST",
+    body: JSON.stringify({
+      
+      title: "foo",
+      body: "bar",
+      userId: 1
+    
+    }),
+    headers: {
+      'Content-type': 'application/json; charset = UTF8'
+    }
+  })
+}
+addNewPost("/posts/")
